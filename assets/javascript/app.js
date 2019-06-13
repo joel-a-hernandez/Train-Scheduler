@@ -1,16 +1,16 @@
  // Your web app's Firebase configuration
  var firebaseConfig = {
-    apiKey: "AIzaSyBPHMMON7JbhN4CNU0jOkBEWjuVnfOwGXs",
-    authDomain: "train-3d4b6.firebaseapp.com",
-    databaseURL: "https://train-3d4b6.firebaseio.com",
-    projectId: "train-3d4b6",
-    storageBucket: "train-3d4b6.appspot.com",
-    messagingSenderId: "853986962004",
-    appId: "1:853986962004:web:c80d7d73562e06f1"
+    apiKey: "AIzaSyBTPwLGvWuFhZrFam_46FGqGF7_UftXqPY",
+    authDomain: "june-project-b93a5.firebaseapp.com",
+    databaseURL: "https://june-project-b93a5.firebaseio.com",
+    projectId: "june-project-b93a5",
+    storageBucket: "june-project-b93a5.appspot.com",
+    messagingSenderId: "881521357384",
+    appId: "1:881521357384:web:76fb77061d3dcade"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
-  var database = firebase.database();
+    
 
- 
+    var database = firebase.database();
