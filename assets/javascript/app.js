@@ -14,3 +14,50 @@
     
 
     var database = firebase.database();
+
+    // Initial values
+
+    var currentTime = "";
+    var trainName = "";
+    var trainDestinaiton = "";
+    var trainTime = "";
+    var trainFrequency = "";
+    var timeDifference = "";
+    var nextArrival = 0;
+    var minAway = 0;
+    var newTrain = {
+        name: trainName,
+        destination: trainDestinaiton,
+        frequency: trainFrequency,
+        firstTrain: trainTime,
+    }
+    var trainInput = "";
+
+    $("#add-train-data").on("click", function (event) {
+        event.preventDefault();
+
+        firstTrain = moment($("#train-time").val().trim(), "HH:mm").format("HH:mm");
+
+        if (trainInput !== 'Invalid date') {
+            newTrain.name = $("#train-name").val().trim();
+            newTrain.destination = $("#train-destination").val().trim();
+            newTrain.firstTrain = firstTrain;
+            newTrain.frequency = $("#train-freq").val().trim();
+        } else {
+            alert("Enter a valid train time!")
+            clearInput();
+        }
+
+        // push to firebase
+        database.ref().push(newTrain);
+
+        clearInput();
+    });
+
+    function clearInput(){
+        $("#train-name").val("");
+        $("#train-destination").val("");
+        $("#train-time").val("");
+        $("#train-freq").val("");
+    }
+
