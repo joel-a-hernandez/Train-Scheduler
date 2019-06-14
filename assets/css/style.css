@@ -1,0 +1,44 @@
+.border {
+    border: solid 1px;
+    margin-top: 2%;
+}
+
+.border-2 {
+    margin-bottom: 4%;
+}
+
+.trainInputs, .trainSchedule {
+    background: lightblue;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+.panel-body {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.boxes {
+    width: 100%;
+}
+
+.inputButton {
+    margin-top: 1%;
+    background: lightblue;
+    margin-bottom: 1%;
+}
+
+.jumbotron {
+    background: lightblue;
+}
+
+.destination, .first-train, .frequency {
+    margin-top: 1%;
+    margin-bottom: 1px;
+}
+
+.train {
+    margin-bottom: 1px;
+}

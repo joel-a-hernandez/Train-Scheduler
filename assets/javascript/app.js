@@ -25,6 +25,7 @@
     var timeDifference = "";
     var nextArrival = 0;
     var minAway = 0;
+    var timeRemainder = 0;
     var newTrain = {
         name: trainName,
         destination: trainDestinaiton,
@@ -61,3 +62,34 @@
         $("#train-freq").val("");
     }
 
+    // Creates the table with Train data and performs calculations for Next Arrival and Minutes Away
+    database.ref().on("child_added", function (snapshot) {
+        
+        if (trainInput !== 'Invalid date') {
+            trainName = snapshot.val().name;
+            trainDestinaiton = snapshot.val().destination;
+            trainTime = moment(snapshot.val().firstTrain, "HH:mm");
+            trainFrequency = snapshot.val().frequency;
+
+           
+            var trainTimeConverted = moment(trainTime, "HH:mm");
+
+            currentTime = moment().format("HH:mm");
+            console.log("Current Time: " + currentTime);
+
+            timeDifference = moment().diff(moment(trainTimeConverted), "minutes");
+            console.log("Time remaining: " + timeDifference);
+
+            timeRemainder = timeDifference % trainFrequency;
+            console.log("Remaining Time: " + timeRemainder);
+
+            minAway = trainFrequency - timeRemainder;
+            console.log(minAway);
+
+            nextArrival = moment().add(minAway, "minutes").format("LT");
+
+            $("#trainData").append("<tr><td>" + trainName + "</td><td>" + trainDestinaiton + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minAway + "</td></tr>");
+        }
+    }, function(errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+    });

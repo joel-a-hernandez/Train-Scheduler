@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default">
+                <div class="panel panel-default border">
                     <div class="panel-heading trainSchedule">Current Train Schedule</div>
                     <div class="panel-body">
                         <table class="table table-sm">
@@ -52,28 +52,28 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default">
+                <div class="panel panel-default border border-2">
                     <div class="panel-heading trainInputs">Add Train</div>
                     <div class="panel-body">
                         <form id="add-form">
                             <div class="inputs">
-                                <label>Train Name: </label>
-                                <input type="text" placeholder="Please enter the name of the train" name="tName" id="train-name">
+                                <label class="train">Train Name </label>
+                                <input type="text" placeholder="Please enter the name of the train" name="tName" id="train-name" class="boxes">
                             </div>
 
                             <div class="inputs">
-                                <label>Destination: </label>
-                                <input type="text" name="dest" placeholder="Enter a destination" id="train-destination">
+                                <label class="destination">Destination </label>
+                                <input type="text" name="dest" placeholder="Enter a destination" id="train-destination" class="boxes">
                             </div>
 
                             <div class="inputs">
-                                <label>First Train Time: (HH:mm - military time) </label>
-                                <input type="text" name="iTime" placeholder="Enter a time" id="train-time">
+                                <label class="first-train">First Train Time (military time) </label>
+                                <input type="text" name="iTime" placeholder="Enter a time" id="train-time" class="boxes">
                             </div>
 
                             <div class="inputs">
-                                <label>Frequency (min): </label>
-                                <input type="number" name="freq" placeholder="Enter frequency" id="train-freq">
+                                <label class="frequency">Frequency (min) </label>
+                                <input type="number" name="freq" placeholder="Enter frequency" id="train-freq" class="boxes">
                             </div>
 
                             <button type="submit" class="inputButton" id="add-train-data">Submit</button>
